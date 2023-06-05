@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>計時器網頁</title>
+    <link rel="stylesheet" type="text/css" href="insidePage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="timer">00:00:00</div>
+
+    <div class="container">
+
+      <div class="center">
+
+        <div class="button-container">
+          <button id="pauseButton" href="#" class="button" onclick="pauseTimer()">暫停</button>
+          <button id="stopButton" href="#" class="button" onclick="stopTimer()">結束</button>
+        </div>      
+        <select id="options" onchange="showSelectedOption()">      
+        <option value="" disabled selected>請選擇目前學習中的科目</option>
+        <option value="addNew">新增</option>
+        <input type="text" id="newOptionInput" style="display: none;">
+        <button id="addNewOptionBtn" style="display: none;">確定</button>
+        </select>
+      </div>      
+
+      <div class="center-container">
+        <table id="studyTable"></table>
+      </div>      
+
+    <div>
+    
+    <audio id="backgroundMusic" src="music.mp3" loop></audio>
+
+    <h2 class="tooltip">代辦清單<span class="tooltiptext">下方輸入欄可以新增代辦事項<br>雙擊清單中的事件可以刪除</span></h2>
+    
+    <meter id="progress-bar" value="0" min="0" max="0"></meter>
+    <br>
+    <ul id="todo-list">
+    </ul>    
+    <input type="text" id="new-task-input" placeholder="新增代辦事項" onkeydown="handleKeyDown(event)">
+
+    <script src="insidePage.js"></script>
+</body>
+</html>
