@@ -3,7 +3,7 @@ var imgStyle = ["fire", "forest", "rain", "beach"]
 
 function redirectToTarget(option) {
     localStorage.setItem('selectedOption', option);
-    window.location.href = 'insidePage.html';
+    window.location.href = 'files/insidePage.html';
 }
 
 
